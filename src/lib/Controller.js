@@ -1,6 +1,9 @@
+const { MagicError } = require("../lib/ErrorHandler");
+
 class Controller {
   constructor(model) {
     this.model = model;
+    this.error = MagicError;
 
     this.index = this.index.bind(this);
     this.create = this.create.bind(this);
