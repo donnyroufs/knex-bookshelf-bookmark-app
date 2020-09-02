@@ -1,6 +1,7 @@
 const express = require("express");
 const apiRoutes = require("./api/routes");
-const knex = require("./db/Knex");
+const { knex } = require("./db/Knex");
+const { errorHandler } = require("./lib/ErrorHandler");
 
 class Application {
   constructor({ constants }) {
@@ -26,6 +27,7 @@ class Application {
   }
   setRoutes({ version }) {
     this.app.use(`/api/v${version}`, apiRoutes);
+    this.app.use(errorHandler);
   }
 }
 
