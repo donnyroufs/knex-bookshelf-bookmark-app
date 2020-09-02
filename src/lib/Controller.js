@@ -14,8 +14,8 @@ class Controller {
 
   async index(req, res, next) {
     try {
-      const data = [];
-      res.json(data);
+      const data = await this.model.fetchAll();
+      res.status(200).json(data);
     } catch (err) {
       next(err);
     }
