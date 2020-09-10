@@ -12,7 +12,9 @@ class AuthController {
   async login(req, res) {
     passport.authenticate("local", { session: false }, (err, user) => {
       if (err || !user) {
-        return res.status(500).json(err);
+        return res
+          .status(403)
+          .json({ message: "Email or password is invalid." });
       }
 
       req.login(user, { session: false }, (err) => {
