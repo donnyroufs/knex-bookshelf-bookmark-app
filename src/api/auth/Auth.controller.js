@@ -10,7 +10,7 @@ class AuthController {
   }
 
   async login(req, res) {
-    passport.authenticate("local", { session: false }, (err, user, info) => {
+    passport.authenticate("local", { session: false }, (err, user) => {
       if (err || !user) {
         return res.status(500).json(err);
       }
