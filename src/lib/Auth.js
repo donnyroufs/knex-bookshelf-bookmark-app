@@ -46,13 +46,7 @@ class Auth {
 
       delete user.password;
 
-      return cb(
-        null,
-        {
-          user,
-        },
-        { message: "logged in" }
-      );
+      return cb(null, user, { message: "logged in" });
     } catch (err) {
       return cb(null, false, {
         message: "Incorrect email or password.",

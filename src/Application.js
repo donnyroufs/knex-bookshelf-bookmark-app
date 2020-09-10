@@ -43,7 +43,7 @@ class Application {
     this.app.use(passport.initialize());
 
     passport.use(
-      new JwtStrategy(Auth.config.options, (user, done) => done(null, { user }))
+      new JwtStrategy(Auth.config.options, (user, done) => done(null, user))
     );
 
     const fields = {
