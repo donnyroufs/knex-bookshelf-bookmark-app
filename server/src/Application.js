@@ -2,6 +2,7 @@ const express = require("express");
 const apiRoutes = require("./api/routes");
 const { knex } = require("./db/Knex");
 const { errorHandler } = require("./lib/ErrorHandler");
+const cors = require('cors');
 
 const passport = require("passport");
 const JwtStrategy = require("passport-jwt").Strategy;
@@ -34,6 +35,7 @@ class Application {
   }
   setRoutes({ version }) {
     this.app.use(express.json());
+    this.app.use(cors());
     this.setAuth();
     this.app.use(`/api/v${version}`, apiRoutes);
     this.app.use(errorHandler);
