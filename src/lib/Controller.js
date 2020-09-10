@@ -50,8 +50,9 @@ class Controller {
 
   async destroy(req, res, next) {
     try {
-      const data = [];
-      res.json(data);
+      const { id } = req.params;
+      await this.model.where({ id: Number(id) }).destroy();
+      res.sendStatus(204);
     } catch (err) {
       next(err);
     }
