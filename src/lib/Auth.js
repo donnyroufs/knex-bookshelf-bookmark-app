@@ -24,7 +24,7 @@ class Auth {
   static async authenticate(email, password, cb) {
     try {
       const { attributes: user } = await userModel.where({ email }).fetch({
-        columns: ["email", "password"],
+        columns: ["id", "email", "password"],
       });
 
       if (!user) {
