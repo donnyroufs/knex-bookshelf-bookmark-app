@@ -4,8 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bookmarker</title>
+    <link rel="stylesheet" href="./scss/app.scss" />
   </head>
   <body>
+    <div data-view="app" data-mount="app">
+      <header class="header" data-view="header">
+        <span data-view="status"> Not logged in. </span>
+        <button data-view="login" data-action="click.login">Login</button>
+      </header>
+    </div>
     <script src="./js/index.js"></script>
   </body>
 </html>
