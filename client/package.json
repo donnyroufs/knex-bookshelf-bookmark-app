@@ -7,13 +7,15 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.26.10"
   },
   "browserslist": [
     "last 1 Chrome versions"
   ],
   "dependencies": {
     "axios": "^0.20.0",
-    "chetsbull": "^2.1.5"
+    "chetsbull": "^2.1.9",
+    "normalize-scss": "^7.0.1"
   }
 }
